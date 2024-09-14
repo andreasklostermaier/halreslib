@@ -7,6 +7,7 @@ use rocket::serde::{Serialize, Deserialize};
 
 // Rocket DB-Pool
 use rocket_db_pools::{sqlx, Connection};
+use sqlx::Acquire;
 //use rocket_db_pools::sqlx::sqlite::SqliteRow;
 //use rocket_db_pools::sqlx::Row;
 
@@ -71,9 +72,7 @@ pub async fn import_urls(mut db: Connection<HaLdb>) -> Result<UrlLibResponse> {
     let path = "exchange/urls/urls.csv";
 
     // Begin SQL transaction
-    let _ul = sqlx::query(r#"BEGIN;"#)
-        .execute(&mut **db)
-        .await
+    let mut transaction = db.begin().await
         .context("PANIC! Unable to begin SQL transaction.")?;
 
     if let Ok(lines) = read_lines(path) {
@@ -148,7 +147,7 @@ pub async fn import_urls(mut db: Connection<HaLdb>) -> Result<UrlLibResponse> {
                         .bind(&uri_entry.crea_time)
                         .bind(&uri_entry.modi_user)
                         .bind(&uri_entry.modi_time)
-                        .execute(&mut **db).await;
+                        .execute(&mut *transaction).await;
 
                     //info!("DEBUG: Result of db insert = {:?}", _insert_result);
 
@@ -162,7 +161,7 @@ pub async fn import_urls(mut db: Connection<HaLdb>) -> Result<UrlLibResponse> {
         }
     }
 
-    let _ul = sqlx::query(r#"COMMIT;"#).execute(&mut **db)
+    transaction.commit()
     .await
     .context("PANIC! Unable to commit SQL transaction.")?;
 
