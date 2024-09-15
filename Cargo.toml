@@ -5,18 +5,19 @@ edition = "2021"
 
 
 [dependencies]
-anyhow       = "1.0.86"
-blake3       = "1.5.4"
-chrono       = "0.4.38"
-env_logger   = "0.11.5"
-log          = "0.4.22"
+anyhow       = "1"
+blake3       = "1"
+chrono       = { version = "0.4", features = ["serde"] }
+csv          = "1"
+env_logger   = "0.11"
+log          = "0.4"
 reqwest      = { version = "0.12", features = ["blocking", "json"] }
-rocket       = "0.5.1"
-select       = "0.6.0"
-serde        = "1.0"
-serde_derive = "1.0"
-serde_json   = "1.0"
+rocket       = "0.5"
+select       = "0.6"
+serde        = { version = "1", features = ["derive"] }
+serde_json   = "1"
 tokio        = { version = "1", features = ["macros", "io-util", "sync", "time", "net", "rt-multi-thread"] }
+url          = { version = "2", features = ["serde"] }
 uuid         = { version = "1", features = ["serde", "v4"] }
 
 
@@ -26,9 +27,9 @@ default-features = false
 features = ["macros", "migrate", "runtime-tokio-native-tls"]
 
 [dependencies.rocket_dyn_templates]
-version  = "0.2.0"
+version  = "0.2"
 features = ["tera"]
 
 [dependencies.rocket_db_pools]
-version  = "0.2.0"
+version  = "0.2"
 features = ["sqlx_sqlite"]

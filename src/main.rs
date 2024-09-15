@@ -1,9 +1,9 @@
 //! The Rust Berlin Hack and Learn Ressource Library
-//! 
+//!
 //! Webframework : Rocket
 //! Database     : SQLite
 //! SQL-Interface: sqlx
-//! 
+//!
 //! Author: Andreas Klostermaier
 
 // Dependencies
@@ -13,22 +13,18 @@ use std::path::{Path, PathBuf};
 // Rocket related
 #[macro_use] extern crate rocket;
 
-use rocket_db_pools::{Database, Connection};
+use rocket::{fs::NamedFile, response::status::NotFound, shield::Shield};
+use rocket_db_pools::{Connection, Database};
 use rocket_dyn_templates::Template;
-use rocket::shield::Shield;
-use rocket::fs::NamedFile;
-use rocket::response::status::NotFound;
 
-use halreslib::HaLdb;
-use halreslib::url::import_urls;
-use halreslib::url::fetch_url_index;
+use halreslib::{url::{fetch_url_index, import_urls}, HaLdb};
 
 #[get("/")]
 async fn index(db: Connection<HaLdb>) -> Template {
     let mut context = std::collections::HashMap::new();
-    context.insert( "user_uuid", "anonymous".to_string() );
+    context.insert("user_uuid", "anonymous".to_string());
     let url_list = fetch_url_index(db).await.expect("[URL] Fetching url index failed.");
-    context.insert( "urls", url_list );
+    context.insert("urls", url_list);
 
     Template::render("start/start", &context)
 }
@@ -64,7 +60,3 @@ fn rocket() -> _ {
         .attach(Shield::new())
         .attach(Template::fairing())
 }
-
-
-
-
