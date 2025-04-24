@@ -140,7 +140,7 @@ pub async fn import_urls(mut db: Connection<HaLdb>) -> Result<UrlLibResponse> {
 
         //info!("DEBUG: Result of db insert = {:?}", _insert_result);
 
-        //println!("{:#?}", uri_entry);
+        println!("{:#?}", uri_entry);
     }
 
     transaction.commit()
