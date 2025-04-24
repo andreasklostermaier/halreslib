@@ -32,8 +32,8 @@ At some point I would like to provide the ressources library as a real permanent
 
 ## Common ressources
 
-[Flosse: Rust web framework comparison](https://github.com/flosse/rust-web-framework-comparison)
-[Luca Palmieri: Zero To Production In Rust](https://www.zero2prod.com/index.html)
+* [Flosse: Rust web framework comparison](https://github.com/flosse/rust-web-framework-comparison)
+* [Luca Palmieri: Zero To Production In Rust](https://www.zero2prod.com/index.html)
 
 
 ## Implementations of halreslib
