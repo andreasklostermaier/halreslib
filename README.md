@@ -45,6 +45,7 @@ At some point I would like to provide the ressources library as a real permanent
 * Database: SQLite
 * Database-Handler: SQLx
 * Template Rendering: Tera
+* Frontend: Plain HTML
 
 ### Oxide-byte: Leptos version
 
@@ -61,11 +62,18 @@ At some point I would like to provide the ressources library as a real permanent
 * Database: SQLite
 * Database-Handler: SQLx
 * Template Rendering: Askama
+* Frontend: HTMX
+
+### Joern: Poem version (work in progress)
+
+* https://codeberg.org/jbethune/hal-poem-openapi
+* Framework: Poem OpenAPI
+* Database: SQLite
+* Database-Handler: Rusqlite
+* Template Rendering: -
+* Frontend: -
 
 ### Barafael: Dioxus version
 
 * work in progress
 
-### Joern: Poem version
-
-* work in progress
