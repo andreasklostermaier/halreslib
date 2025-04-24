@@ -35,7 +35,6 @@ At some point I would like to provide the ressources library as a real permanent
 * [Flosse: Rust web framework comparison](https://github.com/flosse/rust-web-framework-comparison)
 * [Luca Palmieri: Zero To Production In Rust](https://www.zero2prod.com/index.html)
 
-
 ## Implementations of halreslib
 
 ### Sample project: Rocket version
@@ -73,7 +72,13 @@ At some point I would like to provide the ressources library as a real permanent
 * Template Rendering: -
 * Frontend: -
 
-### Barafael: Dioxus version
+### Barafael: Dioxus version (work in progress)
 
-* work in progress
+* https://github.com/barafael/dioxus-halres
+* https://github.com/barafael/halres-downloader
+* Framework: Axum
+* Database: SQLite
+* Database-Handler: Rusqlite
+* Template Rendering: -
+* Frontend: Dioxus
 
