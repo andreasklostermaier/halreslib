@@ -48,10 +48,12 @@ At some point I would like to provide the ressources library as a real permanent
 ### Oxide-byte: Leptos version
 
 - https://github.com/oxide-byte/rust-berlin-leptos
-- Framework: Leptos
-- Database: ???
-- Database-Handler: ???
-- Template Rendering: ???
+- Framework: Leptos (CSR)
+- Database: SurrealDB (Schemaless)
+- Database-Handler: SurrealDB Driver
+- Communication Protocol: GraphQL (Query / Mutation / Subscription)
+- Backend: Axum / Tower (Static Leptos pages)
+- Template Rendering: -
 
 ### Oylenshpeegul: Axum version
 
