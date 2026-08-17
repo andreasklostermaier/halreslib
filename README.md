@@ -73,15 +73,19 @@ At some point I would like to provide the ressources library as a real permanent
 - Template Rendering: -
 - Frontend: -
 
-### Barafael: Dioxus version (work in progress)
+### Barafael: Dioxus version
 
-- https://github.com/barafael/dioxus-halres
+- https://github.com/barafael/halres-dioxus
+  - Table view can be reordered, filtered, sorted. Columns can be de/selected
+  - Detail view for each resource
+  - Search over all columns with fuzzy suggestions
+  - Database schema is same as halres but with tags
 - https://github.com/barafael/halres-downloader
-- Framework: Axum
+  - tokio actor-based parallel/concurrent webpage downloader
+- Framework: Dioxus
 - Database: SQLite
-- Database-Handler: Rusqlite
-- Template Rendering: -
-- Frontend: Dioxus
+- Database-Handler: SeaORM
+- HTML Rendering: Dioxus
 
 ### Cedmoh: Sycamore version
 
