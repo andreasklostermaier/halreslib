@@ -95,3 +95,12 @@ At some point I would like to provide the ressources library as a real permanent
 - Database-Handler: None
 - Template Rendering: Sycamore view macro
 - Frontend: Sycamore
+
+### Barafael: Iced version (no backend, no db, wasm/native)
+- https://github.com/barafael/halreslib-iced
+- hosted at: https://barafael.github.io/halreslib-iced/
+- similar features as barafael/halreslib-dioxus
+
+### Barafael: Elmore version
+- Minimal, overly simple framework employing the elm architecture: https://github.com/barafael/elmore (emits html+wasm)
+- https://barafael.github.io/elmore/halreslib-elmore/
